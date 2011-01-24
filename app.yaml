@@ -1,0 +1,16 @@
+application: smgnsanch
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /
+  static_files: index.html
+  upload: index.html
+  expiration: 0
+- url: /flowers-try-3.png
+  static_files: flowers-try-3.png
+  upload: flowers-try-3.png
+- url: /left-thing-small.png
+  static_files: left-thing-small.png
+  upload: left-thing-small.png

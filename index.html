@@ -1,0 +1,199 @@
+<html>
+<head>
+  <title>Sarah and Neil</title>
+  <style>
+    body {
+      font-family: Helvetica, Verdana, Arial, sans-serif;
+      background-color: #F0823F;
+    }
+    #outer-container {
+      position:relative;
+      padding: 8px;
+      background-color: #FFFFE5;
+      margin: 0px;
+      height: 700px;
+      width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #outer-table { display: table; height: 100%; width: 100%; }
+    #center-vertically { display: table-cell; vertical-align: middle; }
+
+    .headerText {
+      font-family: Lucida Console, Monaco5, monospace;
+      font-size: 1.1em;
+    }
+    h1.headerText {
+      font-size: 3em;
+    }
+
+    #title {
+      position:absolute;
+      top: 0px;
+      left: 80px;
+      width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #nav {
+      position:absolute;
+      top: 90px;
+      left: 80px;
+      width: 850px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .navel {
+      padding-left: 10px;
+      padding-right: 10px;
+      display: inline;
+      text-decoration: underline;
+    }
+    .navel:hover {
+      cursor: pointer;
+    }
+    .navel.selected {
+      font-weight: bold;
+    }
+
+
+    #content-container {
+      position:absolute;
+      top: 120px;
+      left: 100px;
+      width: 900px;
+      height: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .content { 
+      position: relative;
+      display: none;
+      width: 850px;
+      height: 600px;
+    }
+    .content.selected { display: block; }
+    .gmap {
+      position: absolute;
+      left: 0px;
+      bottom: 30px;
+    }
+    p.reservationCodes {
+      padding-left: 10px;
+      margin: 0;
+    }
+
+    #flowers {
+      position: absolute;
+      bottom: 20px;
+      right: 0px;
+    }
+
+
+    #left-border {
+      left: 20px;
+      width: 75px;
+      height: 92%;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      background-image: url("left-thing-small.png");
+      background-repeat: repeat-y;
+    }
+  </style>
+</head>
+<body>
+<div id="outer-table"><div id="center-vertically">
+  <div id="outer-container">
+    <div id="left-border"></div>
+    <center><h1 id="title" class="headerText">Sarah and Neil</h1></center>
+    <div id="nav" class="headerText">
+      <span class="navel rsvp" onclick="switchTo('rsvp')">Save the Date</span>
+      <span class="navel about selected" onclick="switchTo('about')">About Us</span>
+      <span class="navel when" onclick="switchTo('when')">Details</span>
+      <span class="navel stay" onclick="switchTo('stay')">Hotels</span>
+      <span class="navel attractions" onclick="switchTo('attractions')">Local "Attractions"</span>
+      <span class="navel registry" onclick="switchTo('registry')">Registry</span>
+    </div>
+    <div id="content-container">
+      <span class="content about selected">
+        <p>Insert Picture Here.</p>
+      </span>
+      <span class="content when">
+        <span>
+          Normandy Farm<br />
+          1401 Morris Road<br />
+          Blue Bell, PA<br/>
+          May 29, 2011<br />
+          4:30pm Ceremony<br />
+          6pm Cocktail Hour<br />
+          7-11pm Dinner &amp; Dancing<br />
+        </span>
+
+        <div class="gmap">
+          <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=208978983108384156453.00049a00342864df69a5e&amp;ll=40.18007,-75.278642&amp;spn=0.002844,0.00456&amp;z=12&amp;output=embed"></iframe><br /><small>View <a href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=208978983108384156453.00049a00342864df69a5e&amp;ll=40.18007,-75.278642&amp;spn=0.002844,0.00456&amp;z=12&amp;source=embed" style="color:#0000FF;text-align:left">Sarah and Neil's Wedding Places</a> in a larger map</small>
+        </div>
+      </span>
+      <span class="content stay">
+        <p>At the moment, we have a block of rooms at Normandy Farm set aside.
+           The rate is $129 per room for 1-2 people, and $15 extra per person.
+           You need to give them the following reservation codes:</p>
+        <p class="reservationCodes">Attendee Code: SGWGS</p>
+        <p class="reservationCodes">Group Code: 19035</p>
+
+        <p>You can make reservations either by calling (215) 616-8500, or by
+           going to <a href="http://www.normandyfarm.com/">normandyfarm.com</a>.
+           If you use the website, make sure to use the individual reservations
+           link first, then enter the group code to get the discount.</p>
+      </span>
+      <span class="content registry">
+        <p>We're still deciding where to register and what for, but check back
+           soon, and we'll have some links for you.</p>
+      </span>
+      <span class="content rsvp">
+        <iframe src="https://spreadsheets.google.com/embeddedform?formkey=dF9FbkFTbDY1bEpVSkdUZWN4RzlfM0E6MQ&bc=transparent" width="760" height="747" frameborder="0" marginheight="0" marginwidth="0" style="margin: 1em 0;">Loading...</iframe>
+      </span>
+      <span class="content attractions">
+        <p>The <a href="http://en.wikipedia.org/wiki/King_of_Prussia_Mall">King
+           of Prussia Mall</a> is the largest shopping mall on the east coast, if you're
+           into that sort of thing.</p>
+        <p><a href="http://www.nps.gov/vafo/index.htm">Valley Forge National
+           Park</a> is a very pretty national park about half an hour away from
+           Normandy Farm. It's the same Valley Forge that George Washington
+           stayed with his army all winter during the revolutionary war, so
+           it's interesting to history buffs and nature lovers.</p>
+        <div class="gmap">
+          <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=208978983108384156453.00049a8f644144e53ee8d&amp;ll=40.134552,-75.365342&amp;spn=0.091037,0.1734&amp;output=embed&amp;z=11"></iframe><br /><small>View <a href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=208978983108384156453.00049a8f644144e53ee8d&amp;ll=40.134552,-75.365342&amp;spn=0.091037,0.1734&amp;source=embed" style="color:#0000FF;text-align:left">Local Attractions</a> in a larger map</small>
+        </div>
+      </span>
+    </div>
+    <div id="flowers">
+      <img src="flowers-try-3.png" height="350" width="auto">
+    </div>
+  </div>
+</div></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript">
+  function log(str) {
+    if (window.console && console.log) { console.log(str); }
+  }
+  function switchTo(newActive) {
+    if (active == newActive) {
+      return;
+    }
+    if (options.indexOf(newActive) == -1) {
+      log('unknown option ' + newActive);
+      return;
+    }
+    $('.'+active).removeClass("selected");
+    active = newActive;
+    window.location.hash = active;
+    $('.'+active).addClass("selected");
+  }
+  var options = ['about', 'when', 'stay', 'registry', 'rsvp', 'attractions'];
+  var active = 'about';
+  if (window.location.hash != '') {
+    switchTo(window.location.hash.substring(1))
+  }
+</script>
+</body</html>
