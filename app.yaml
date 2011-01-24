@@ -8,9 +8,12 @@ handlers:
   static_files: index.html
   upload: index.html
   expiration: 0
-- url: /flowers-try-3.png
-  static_files: flowers-try-3.png
-  upload: flowers-try-3.png
+- url: /flowers-try-3-smaller.png
+  static_files: flowers-try-3-smaller.png
+  upload: flowers-try-3-smaller.png
+- url: /sarahandneil.png
+  static_files: sarahandneil.png
+  upload: sarahandneil.png
 - url: /left-thing-small.png
   static_files: left-thing-small.png
   upload: left-thing-small.png
