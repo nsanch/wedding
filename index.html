@@ -1,11 +1,16 @@
 <html>
 <head>
   <title>Sarah and Neil</title>
+  <link href='http://fonts.googleapis.com/css?family=Tangerine:regular,bold' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
   <style>
     body {
-      font-family: Helvetica, Verdana, Arial, sans-serif;
+      font-family: 'Droid Sans', Helvetica, Verdana, Arial, sans-serif;
       background-color: #F0823F;
     }
+    .neil { font-family: 'Droid Sans Mono', Helvetica, Verdana, Arial, sans-serif; }
+    .sarah { font-family: 'Tangerine', arial, sans-serif; font-size: 1.5em; }
     #outer-container {
       position:relative;
       padding: 8px;
@@ -20,7 +25,7 @@
     #center-vertically { display: table-cell; vertical-align: middle; }
 
     .headerText {
-      font-family: Lucida Console, Monaco5, monospace;
+      font-family: 'Tangerine', arial, sans-serif; 
       font-size: 1.1em;
     }
     h1.headerText {
@@ -45,8 +50,8 @@
       margin-right: auto;
     }
     .navel {
-      padding-left: 10px;
-      padding-right: 10px;
+      padding-left: 25px;
+      padding-right: 25px;
       display: inline;
       text-decoration: underline;
     }
@@ -72,6 +77,9 @@
       display: none;
       width: 850px;
       height: 600px;
+    }
+    .content.stay {
+      width: 500px;
     }
     .content.selected { display: block; }
     .gmap {
@@ -108,16 +116,18 @@
     <div id="left-border"></div>
     <center><h1 id="title" class="headerText">Sarah and Neil</h1></center>
     <div id="nav" class="headerText">
-      <span class="navel rsvp" onclick="switchTo('rsvp')">Save the Date</span>
-      <span class="navel about selected" onclick="switchTo('about')">About Us</span>
-      <span class="navel when" onclick="switchTo('when')">Details</span>
-      <span class="navel stay" onclick="switchTo('stay')">Hotels</span>
-      <span class="navel attractions" onclick="switchTo('attractions')">Local "Attractions"</span>
-      <span class="navel registry" onclick="switchTo('registry')">Registry</span>
+      <h2 class="navel rsvp" onclick="switchTo('rsvp')">Save the Date</h2>
+      <h2 class="navel about selected" onclick="switchTo('about')">About Us</h2>
+      <h2 class="navel when" onclick="switchTo('when')">Details</h2>
+      <h2 class="navel stay" onclick="switchTo('stay')">Hotels</h2>
+      <h2 class="navel attractions" onclick="switchTo('attractions')">Local Attractions</h2>
+      <h2 class="navel registry" onclick="switchTo('registry')">Registry</h2>
     </div>
     <div id="content-container">
       <span class="content about selected">
-        <img src="sarahandneil.png" />
+        <p class="neil">Hi! My name is Neil.</p>
+        <p class="sarah">Hi, my name is Sarah.</p>
+        <img src="sarahandneil.png" width="425" height="auto" style="position: absolute; bottom: 40px;"/>
       </span>
       <span class="content when">
         <span>
@@ -125,33 +135,48 @@
           1401 Morris Road<br />
           Blue Bell, PA<br/>
           May 29, 2011<br />
+          <br />
           4:30pm Ceremony<br />
           6pm Cocktail Hour<br />
           7-11pm Dinner &amp; Dancing<br />
         </span>
 
         <div class="gmap">
-          <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=208978983108384156453.00049a00342864df69a5e&amp;ll=40.18007,-75.278642&amp;spn=0.002844,0.00456&amp;z=12&amp;output=embed"></iframe><br /><small>View <a href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=208978983108384156453.00049a00342864df69a5e&amp;ll=40.18007,-75.278642&amp;spn=0.002844,0.00456&amp;z=12&amp;source=embed" style="color:#0000FF;text-align:left">Sarah and Neil's Wedding Places</a> in a larger map</small>
+          <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&hl=en&msa=0&msid=208978983108384156453.00049a00342864df69a5e&ll=40.179923,-75.27832&spn=0.09102,0.145912&z=12&output=embed"></iframe><br /><small>View <a href="http://maps.google.com/maps/ms?ie=UTF8&hl=en&msa=0&msid=208978983108384156453.00049a00342864df69a5e&ll=40.179923,-75.27832&spn=0.09102,0.145912&z=12&source=embed" style="color:#0000FF;text-align:left">Sarah and Neil's Wedding Places</a> in a larger map</small>
         </div>
       </span>
       <span class="content stay">
-        <p>At the moment, we have a block of rooms at Normandy Farm set aside.
-           The rate is $129 per room for 1-2 people, and $15 extra per person.
-           You need to give them the following reservation codes:</p>
-        <p class="reservationCodes">Attendee Code: SGWGS</p>
-        <p class="reservationCodes">Group Code: 19035</p>
+        <p>We have arranged for blocks of rooms at two hotels, including the
+           hotel where we're having the wedding and reception:</p>
+        <ul>
+        <li>Normandy Farm (May 29 only)</li>
+        <ul>
+          <li><p>The rate is $129 per room for 1-2 people, and $15 extra per person.
+              You need to give them the following reservation codes while reserving:</p>
 
-        <p>You can make reservations either by calling (215) 616-8500, or by
-           going to <a href="http://www.normandyfarm.com/">normandyfarm.com</a>.
-           If you use the website, make sure to use the individual reservations
-           link first, then enter the group code to get the discount.</p>
+                <p class="reservationCodes">Attendee Code: SGWGS</p>
+                <p class="reservationCodes">Group Code: 19035</p>
+
+              <p>You can make reservations either by calling (215) 616-8500, or by
+                  going to <a href="http://www.normandyfarm.com/">normandyfarm.com</a>.
+                  If you use the website, make sure to use the individual reservations
+                  link first, then enter the group code to get the discount.</p>
+          </li>
+        </ul>
+        <li>Days Inn, Horsham, PA (May 28 and 29)
+        <ul>
+          <li>The rate is $70/night for up to 4 people. You can call to reserve at  
+              215-674-2500. The group code is CGMGSW. This rate is only valid
+              until April 28th.</li>
+        </ul>
+        </ul>
       </span>
       <span class="content registry">
         <p>We're still deciding where to register and what for, but check back
            soon, and we'll have some links for you.</p>
       </span>
       <span class="content rsvp">
-        <iframe src="https://spreadsheets.google.com/embeddedform?formkey=dF9FbkFTbDY1bEpVSkdUZWN4RzlfM0E6MQ&bc=transparent" width="760" height="747" frameborder="0" marginheight="0" marginwidth="0" style="margin: 1em 0;">Loading...</iframe>
+        <iframe src="https://spreadsheets.google.com/embeddedform?formkey=dF9FbkFTbDY1bEpVSkdUZWN4RzlfM0E6MQ&bc=transparent&f=Droid+Sans" width="760" height="590" frameborder="0" marginheight="0" marginwidth="0" style="margin: 0 0;">Loading...</iframe>
       </span>
       <span class="content attractions">
         <p>The <a href="http://en.wikipedia.org/wiki/King_of_Prussia_Mall">King
@@ -162,8 +187,18 @@
            Normandy Farm. It's the same Valley Forge that George Washington
            stayed with his army all winter during the revolutionary war, so
            it's interesting to history buffs and nature lovers.</p>
+        <p><a href="http://www.peddlersvillage.com/">Peddler's Village</a> is a
+           fair/village with a bunch of artisan shops that adults might find
+           interesting, and an area for kids that Sarah's sister Rachel
+           described as "Chuck E Cheese on crack." The kids' area is called
+           Giggleberry Fair. Peddler's village is near the village of <a
+           href="http://www.newhopepa.com">New Hope, PA</a>, which has a
+           similar vibe and more stuff like it.
+           </p>
+        <p>
         <div class="gmap">
-          <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=208978983108384156453.00049a8f644144e53ee8d&amp;ll=40.134552,-75.365342&amp;spn=0.091037,0.1734&amp;output=embed&amp;z=11"></iframe><br /><small>View <a href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=208978983108384156453.00049a8f644144e53ee8d&amp;ll=40.134552,-75.365342&amp;spn=0.091037,0.1734&amp;source=embed" style="color:#0000FF;text-align:left">Local Attractions</a> in a larger map</small>
+          <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&hl=en&msa=0&msid=208978983108384156453.00049a8f644144e53ee8d&ll=40.22083,-75.226135&spn=1.184884,2.469177&z=9&output=embed"></iframe><br /><small>View <a href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=208978983108384156453.00049a8f644144e53ee8d&amp;ll=40.134552,-75.365342&amp;spn=0.091037,0.1734&amp;source=embed" style="color:#0000FF;text-align:left">Local Attractions</a> in a larger map</small>
+          
         </div>
       </span>
     </div>
