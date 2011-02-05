@@ -134,14 +134,14 @@
     <div id="content-container">
       <span class="content about">
        <p>The story of a computer-science-math-brain falling for the
-          technology-hating-social-worker is just your typical love story. Boy
+          technophobic-social-worker is just your typical love story. Boy
           meets girl. Boy thinks girl is cute. Girl thinks boy is cute. They
           are the last ones at the party and ride home on the subway together.
           He rides 3 extra stops on the train to keep talking with her.</p>
 
-       <p>And that's the story of how Sarah and Neil met. Now, two years later,
-          she is a little less afraid of the internet and he is a little less 
-          disapproving when she counts with her fingers.</p>
+       <p>And that's the story of how Sarah and Neil met. Now, after two happy
+          years, she is a little less afraid of the internet and he is a
+          little less disapproving when she counts with her fingers.</p>
        <img id="us" src="sarahandneil.png"/>
       </span>
       <span class="content when selected">
@@ -157,7 +157,6 @@
         7-11pm Dinner &amp; Dancing<br />
 
         <div class="gmap">
-          <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&hl=en&msa=0&msid=208978983108384156453.00049a00342864df69a5e&ll=40.179923,-75.27832&spn=0.09102,0.145912&z=12&output=embed"></iframe><br /><small>View <a href="http://maps.google.com/maps/ms?ie=UTF8&hl=en&msa=0&msid=208978983108384156453.00049a00342864df69a5e&ll=40.179923,-75.27832&spn=0.09102,0.145912&z=12&source=embed" style="color:#0000FF;text-align:left">Sarah and Neil's Wedding Places</a> in a larger map</small>
         </div>
       </span>
       <span class="content stay">
@@ -219,7 +218,6 @@
            </p>
         <p>
         <div class="gmap">
-          <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&hl=en&msa=0&msid=208978983108384156453.00049a8f644144e53ee8d&ll=40.22083,-75.226135&spn=1.184884,2.469177&z=9&output=embed"></iframe><br /><small>View <a href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=208978983108384156453.00049a8f644144e53ee8d&amp;ll=40.134552,-75.365342&amp;spn=0.091037,0.1734&amp;source=embed" style="color:#0000FF;text-align:left">Local Attractions</a> in a larger map</small>
           
         </div>
       </span>
@@ -233,11 +231,16 @@
 <script type="text/javascript">
   var options = ['about', 'when', 'stay', 'registry', 'rsvp', 'attractions'];
   var active = 'when';
+  var maps = {'when': '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;source=embed&amp;msa=0&amp;msid=208978983108384156453.00049a00342864df69a5e&amp;ll=40.178873,-75.27832&amp;spn=0.364084,0.583649&amp;z=10&amp;output=embed"></iframe><br /><small>View <a href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;source=embed&amp;msa=0&amp;msid=208978983108384156453.00049a00342864df69a5e&amp;ll=40.178873,-75.27832&amp;spn=0.364084,0.583649&amp;z=10" style="color:#0000FF;text-align:left">Sarah and Neil\'s Wedding Places</a> in a larger map</small>',
+              'attractions': '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=208978983108384156453.00049a8f644144e53ee8d&amp;source=embed&amp;ll=40.210343,-75.270081&amp;spn=0.727823,1.167297&amp;z=9&amp;output=embed"></iframe><br /><small>View <a href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=208978983108384156453.00049a8f644144e53ee8d&amp;ll=40.134552,-75.365342&amp;spn=0.091037,0.1734&amp;source=embed" style="color:#0000FF;text-align:left">Local Attractions</a> in a larger map</small>'};
 
   function log(str) {
     if (window.console && console.log) { console.log(str); }
   }
   function switchTo(newActive) {
+    if (maps[newActive]) {
+      $('.'+newActive+'.content .gmap').html(maps[newActive])
+    }
     if (active == newActive) {
       return;
     }
@@ -258,6 +261,8 @@
   }
   if (window.location.hash != '') {
     switchTo(window.location.hash.substring(1))
+  } else {
+    $('.when.content .gmap').html(maps['when'])
   }
 </script>
 </body</html>
