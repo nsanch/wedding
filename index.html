@@ -51,8 +51,8 @@
       margin-right: auto;
     }
     .navel {
-      padding-left: 25px;
-      padding-right: 25px;
+      margin-left: 25px;
+      margin-right: 25px;
       display: inline;
       text-decoration: underline;
     }
@@ -62,7 +62,6 @@
     .navel.selected {
       font-weight: bold;
     }
-
 
     #content-container {
       position:absolute;
@@ -125,14 +124,14 @@
     <center><h1 id="title" class="headerText">Sarah and Neil</h1></center>
     <div id="nav" class="headerText">
       <h2 class="navel rsvp" onclick="switchTo('rsvp')">Save the Date</h2>
-      <h2 class="navel about" onclick="switchTo('about')">About Us</h2>
-      <h2 class="navel when selected" onclick="switchTo('when')">Details</h2>
+      <h2 class="navel about selected" onclick="switchTo('about')">About Us</h2>
+      <h2 class="navel when" onclick="switchTo('when')">Details</h2>
       <h2 class="navel stay" onclick="switchTo('stay')">Hotels</h2>
       <h2 class="navel attractions" onclick="switchTo('attractions')">Local Attractions</h2>
       <h2 class="navel registry" onclick="switchTo('registry')">Registry</h2>
     </div>
     <div id="content-container">
-      <span class="content about">
+      <span class="content about selected">
        <p>The story of a computer-science-math-brain falling for the
           technophobic-social-worker is just your typical love story. Boy
           meets girl. Boy thinks girl is cute. Girl thinks boy is cute. They
@@ -144,7 +143,7 @@
           little less disapproving when she counts with her fingers.</p>
        <img id="us" src="sarahandneil.png"/>
       </span>
-      <span class="content when selected">
+      <span class="content when">
         <p>We'll be getting married this coming Memorial Day weekend, in Blue Bell, PA. The location and time:</p>
 
         Normandy Farm<br />
@@ -230,7 +229,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 <script type="text/javascript">
   var options = ['about', 'when', 'stay', 'registry', 'rsvp', 'attractions'];
-  var active = 'when';
+  var active = 'about';
   var maps = {'when': '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;source=embed&amp;msa=0&amp;msid=208978983108384156453.00049a00342864df69a5e&amp;ll=40.178873,-75.27832&amp;spn=0.364084,0.583649&amp;z=10&amp;output=embed"></iframe><br /><small>View <a href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;source=embed&amp;msa=0&amp;msid=208978983108384156453.00049a00342864df69a5e&amp;ll=40.178873,-75.27832&amp;spn=0.364084,0.583649&amp;z=10" style="color:#0000FF;text-align:left">Sarah and Neil\'s Wedding Places</a> in a larger map</small>',
               'attractions': '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=208978983108384156453.00049a8f644144e53ee8d&amp;source=embed&amp;ll=40.210343,-75.270081&amp;spn=0.727823,1.167297&amp;z=9&amp;output=embed"></iframe><br /><small>View <a href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=208978983108384156453.00049a8f644144e53ee8d&amp;ll=40.134552,-75.365342&amp;spn=0.091037,0.1734&amp;source=embed" style="color:#0000FF;text-align:left">Local Attractions</a> in a larger map</small>'};
 
