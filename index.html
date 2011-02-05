@@ -98,7 +98,14 @@
       bottom: 20px;
       right: 0px;
     }
-
+    
+    #us {
+      position: absolute;
+      left: 0px;
+      bottom: 30px;
+      width: 425px;
+      height: 386px;
+    }
 
     #left-border {
       left: 20px;
@@ -118,27 +125,36 @@
     <center><h1 id="title" class="headerText">Sarah and Neil</h1></center>
     <div id="nav" class="headerText">
       <h2 class="navel rsvp" onclick="switchTo('rsvp')">Save the Date</h2>
-      <h2 class="navel about selected" onclick="switchTo('about')">About Us</h2>
-      <h2 class="navel when" onclick="switchTo('when')">Details</h2>
+      <h2 class="navel about" onclick="switchTo('about')">About Us</h2>
+      <h2 class="navel when selected" onclick="switchTo('when')">Details</h2>
       <h2 class="navel stay" onclick="switchTo('stay')">Hotels</h2>
       <h2 class="navel attractions" onclick="switchTo('attractions')">Local Attractions</h2>
       <h2 class="navel registry" onclick="switchTo('registry')">Registry</h2>
     </div>
     <div id="content-container">
-      <span class="content about selected">
-        <img src="sarahandneil.png"/>
+      <span class="content about">
+       <p>The story of a computer-science-math-brain man falling for the
+          technology-hating-social-worker is just your typical love story. Boy
+          meets girl. Boy thinks girl is cute. Girl thinks boy is cute. They are
+          the last ones at the party and ride home on the subway together. He
+          rides 3 extra stops on the train to keep talking with her.</p>
+
+       <p>And that's the story of how Sarah and Neil met. Now, two years later,
+          she is a little less afraid of the internet and he is a little less 
+          disapproving when she counts with her fingers.</p>
+       <img id="us" src="sarahandneil.png"/>
       </span>
-      <span class="content when">
-        <span>
-          Normandy Farm<br />
-          1401 Morris Road<br />
-          Blue Bell, PA<br/>
-          May 29, 2011<br />
-          <br />
-          4:30pm Ceremony<br />
-          6pm Cocktail Hour<br />
-          7-11pm Dinner &amp; Dancing<br />
-        </span>
+      <span class="content when selected">
+        <p>We'll be getting married this coming Memorial Day weekend, in Blue Bell, PA. The location and time:</p>
+
+        Normandy Farm<br />
+        1401 Morris Road<br />
+        Blue Bell, PA<br/>
+        May 29, 2011<br />
+        <br />
+        4:30pm Ceremony<br />
+        6pm Cocktail Hour<br />
+        7-11pm Dinner &amp; Dancing<br />
 
         <div class="gmap">
           <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&hl=en&msa=0&msid=208978983108384156453.00049a00342864df69a5e&ll=40.179923,-75.27832&spn=0.09102,0.145912&z=12&output=embed"></iframe><br /><small>View <a href="http://maps.google.com/maps/ms?ie=UTF8&hl=en&msa=0&msid=208978983108384156453.00049a00342864df69a5e&ll=40.179923,-75.27832&spn=0.09102,0.145912&z=12&source=embed" style="color:#0000FF;text-align:left">Sarah and Neil's Wedding Places</a> in a larger map</small>
@@ -159,7 +175,9 @@
               <p>You can make reservations either by calling (215) 616-8500, or by
                   going to <a href="http://www.normandyfarm.com/">normandyfarm.com</a>.
                   If you use the website, make sure to use the individual reservations
-                  link first, then enter the group code to get the discount.</p>
+                  link first, then hit the group reservations link, then enter
+                  the above codes to get the discount. The rate is only valid
+                  until April 15th.</p>
           </li>
         </ul>
         <li>Days Inn, Horsham, PA (May 28 and 29)
@@ -173,9 +191,14 @@
       <span class="content registry">
         <p>We're still deciding where to register and what for, but check back
            soon, and we'll have some links for you.</p>
+        
+        <p>If you need our address, here it is:</p>
+          333 E 14th St.<br />
+          Apt. 2A<br />
+          New York, NY 10003<br />
       </span>
       <span class="content rsvp">
-        <iframe src="https://spreadsheets.google.com/embeddedform?formkey=dF9FbkFTbDY1bEpVSkdUZWN4RzlfM0E6MQ&bc=transparent&f=Droid+Sans" width="760" height="590" frameborder="0" marginheight="0" marginwidth="0" style="margin: 0 0;">Loading...</iframe>
+        <iframe src="https://spreadsheets.google.com/embeddedform?formkey=dF9FbkFTbDY1bEpVSkdUZWN4RzlfM0E6MQ&bc=transparent&f=Droid+Sans" width="760" height="590" frameborder="0" marginheight="0" marginwidth="0" style="margin: 1em 0px;">Loading...</iframe>
       </span>
       <span class="content attractions">
         <p>The <a href="http://en.wikipedia.org/wiki/King_of_Prussia_Mall">King
@@ -209,7 +232,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 <script type="text/javascript">
   var options = ['about', 'when', 'stay', 'registry', 'rsvp', 'attractions'];
-  var active = 'about';
+  var active = 'when';
 
   function log(str) {
     if (window.console && console.log) { console.log(str); }
@@ -228,10 +251,10 @@
       log('unknown option ' + newActive);
       return;
     }
-    $('.'+active).removeClass("selected");
+    $('.'+active).removeClass('selected');
     active = newActive;
     window.location.hash = active;
-    $('.'+active).addClass("selected");
+    $('.'+active).addClass('selected');
   }
   if (window.location.hash != '') {
     switchTo(window.location.hash.substring(1))
