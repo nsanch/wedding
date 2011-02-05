@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
   <title>Sarah and Neil</title>
@@ -207,6 +208,9 @@
 </div></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 <script type="text/javascript">
+  var options = ['about', 'when', 'stay', 'registry', 'rsvp', 'attractions'];
+  var active = 'about';
+
   function log(str) {
     if (window.console && console.log) { console.log(str); }
   }
@@ -223,8 +227,6 @@
     window.location.hash = active;
     $('.'+active).addClass("selected");
   }
-  var options = ['about', 'when', 'stay', 'registry', 'rsvp', 'attractions'];
-  var active = 'about';
   if (window.location.hash != '') {
     switchTo(window.location.hash.substring(1))
   }
