@@ -218,7 +218,13 @@
     if (active == newActive) {
       return;
     }
-    if (options.indexOf(newActive) == -1) {
+    var idx = -1;
+    for (var i = 0; i < options.length; ++i) {
+      if (options[i] == newActive) {
+        idx = i;
+      }
+    }
+    if (idx == -1) {
       log('unknown option ' + newActive);
       return;
     }
